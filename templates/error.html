@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center align-items-center" id="error">
+            <h1 class="me-3 pe-3 align-top border-end inline-block align-content-center">{{ code }}</h1>
+            <div class="inline-block align-middle">
+                <h2 class="font-weight-normal lead" id="desc">{{ desc|safe }}</h2>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

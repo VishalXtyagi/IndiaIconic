@@ -1,34 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <nav class="navbar navbar-expand navbar-dark bg-dark p-3" aria-label="Second navbar example">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-              <img src="img/logo.jpeg" alt="Logo" class="logo">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    
-          <div class="collapse navbar-collapse" id="navbarsExample02">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item active">
-                <a class="nav-link me-sm-3" href="#">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link me-lg-3 btn btn-secondary text-light" href="#">Enroll Now</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
+{% extends 'includes/base.html' %}
+
+{% block main %}
     <div class="container-fluid py-3 ps-lg-5 bg-dark text-light">
         <div class="row align-items-center">
             <div class="col-md-6 mb-3">
@@ -42,14 +14,14 @@
                     Featured in Tabloids and Pap Talks on various reputed Platforms such as iDiva, Quint, ZoomTV etc
                     A Gift Hamper worth Rs. 50,000+ 
                     Lots more thats still a Surprize</p>
-                <a href="#" class="btn btn-secondary text-light">Enroll Now</a>
+                <a href="#enrollments" class="btn btn-secondary text-light">Enroll Now</a>
             </div>
             <div class="col-md-6 pe-lg-0">
-                <img src="img/register-now.jpeg" alt="India's Iconic Top" class="w-100">
+                <img src="{{ url_for('static', filename='img/register-now.jpeg') }}" alt="India's Iconic Top" class="w-100">
             </div>
         </div>
     </div>
-    <div class="container-fluid p-5 bg-dark text-light">
+    <div class="container-fluid p-5 bg-dark text-light" id="enrollments">
         <div class="row">
             <div class="col-md-6">
                 <h4>Criteria to Enroll</h4>
@@ -70,11 +42,11 @@
                 </ol>
             </div>
             <div class="col-md-6">
-                <form class="m-lg-3 p-5 text-light bg-secondary text-center rounded">
+                <form action="{{ url_for('home') }}" method="post" class="m-lg-3 p-5 text-light bg-secondary text-center rounded needs-validation" novalidate>
                     <h4 class="mb-3">Fill the Details</h4>
-                    <input type="text" name="name" class="form-control w-100 mb-3" placeholder="Name">
-                    <input type="tel" name="phone" class="form-control w-100 mb-3" placeholder="Contact No.">
-                    <input type="email" name="email" class="form-control w-100 mb-4" placeholder="Email">
+                    <input type="text" name="name" class="form-control w-100 mb-3" placeholder="Name" autocomplete="off" required>
+                    <input type="tel" name="phone" class="form-control w-100 mb-3" pattern="[789][0-9]{9}" placeholder="Contact No." autocomplete="off" required>
+                    <input type="email" name="email" class="form-control w-100 mb-4" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email" autocomplete="off" required>
                     <div class="text-lg-end">
                         <button type="submit" class="btn btn-light text-dark">Submit</button>
                     </div>
@@ -82,7 +54,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid p-5 bg-dark text-light">
+    <div class="container-fluid p-5 bg-dark text-light" id="about">
         <div class="row">
             <div class="col-md-8">
                 <h4>About Us</h4>
@@ -91,25 +63,25 @@
         </div>
         <div class="row">
             <div class="col-md-6 mb-3">
-                <img src="img/top-100.jpeg" alt="India's Iconic Top" class="w-100">
+                <img src="{{ url_for('static', filename='img/top-100.jpeg') }}" alt="India's Iconic Top" class="w-100">
             </div>
             <div class="col-md-6 mb-3">
-                <img src="img/enroll-now.jpeg" alt="India's Iconic Top" class="w-100">
+                <img src="{{ url_for('static', filename='img/enroll-now.jpeg') }}" alt="India's Iconic Top" class="w-100">
             </div>
         </div>
     </div>
-    <div class="container-fluid p-5 bg-dark text-light">
+    <div class="container-fluid p-5 bg-dark text-light" id="enrollments">
         <div class="row">
             <div class="col-md-6 mb-3">
                 <h4>Join Us Now</h4>
                 <p>Don't miss this Golden Opportunity to get Featured in India's Top 100 Iconic Makeup Artist. You don't really need count of Followers to SHine- All you need is the Art as an Artist- If you Belive in yourself... We are happy to open the doors for you, to make you Popular and add more Crdibility to your Talent by our Exclusive Certificate.</p>
             </div>
             <div class="col-md-6">
-                <form class="m-lg-3 p-5 text-light bg-secondary text-center rounded">
+                <form action="{{ url_for('home') }}" method="post" class="m-lg-3 p-5 text-light bg-secondary text-center rounded needs-validation" novalidate>
                     <h4 class="mb-3">Fill the Details</h4>
-                    <input type="text" name="name" class="form-control w-100 mb-3" placeholder="Name">
-                    <input type="tel" name="phone" class="form-control w-100 mb-3" placeholder="Contact No.">
-                    <input type="email" name="email" class="form-control w-100 mb-4" placeholder="Email">
+                    <input type="text" name="name" class="form-control w-100 mb-3" placeholder="Name" required>
+                    <input type="tel" name="phone" class="form-control w-100 mb-3" pattern="[789][0-9]{9}" placeholder="Contact No." required>
+                    <input type="email" name="email" class="form-control w-100 mb-4" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email" required>
                     <div class="text-lg-end">
                         <button type="submit" class="btn btn-light text-dark">Submit</button>
                     </div>
@@ -117,23 +89,28 @@
             </div>
         </div>
     </div>
-    <footer>
-        <ul class="list-inline mb-4">
-            <li class="list-inline-item">
-                <a href="#">Instagram</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#">Facebook</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#">Twitter</a>
-            </li>
-        </ul>
-        <p><a href="#">Terms & Conditions</a> <br>
-            <a href="#">Privacy Policy</a></p>
-    </footer>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
-</html>
+{% endblock %}
+
+{% block script %}
+<script>
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
+{% endblock %}

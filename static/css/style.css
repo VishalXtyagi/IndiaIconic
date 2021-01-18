@@ -8,6 +8,9 @@ a:hover {
 .logo {
     height: 100px;
 }
+#error {
+    height: 100vh;
+}
 footer {
     padding: 2.5rem 0;
     text-align: center;
