@@ -1,94 +1,104 @@
 {% extends 'includes/base.html' %}
 
 {% block main %}
-    <div class="container-fluid py-3 ps-lg-5 bg-dark text-light">
-        <div class="row align-items-center">
-            <div class="col-md-6 mb-3">
-                <h2 class="text-uppercase">India's Iconic Top</h2>
-                <h4>100 Makeup Artists</h4>
-                <p>For the First time in the History of India- We create a platform to Honor the TOP 100 Iconic Makeup Artists of India. If you think you deserve to be in TOP 100</p>
-                <p>If you become one of the Top 100 Iconic Makeup Artist, You Get
-                    A Trophy and a Certificate which is Valid till 2026
-                    Featured in the First Edition of our Magazine to be circulated Nationwide.
-                    Interviewed to be seen by atleast 10M viewers with your Story.
-                    Featured in Tabloids and Pap Talks on various reputed Platforms such as iDiva, Quint, ZoomTV etc
-                    A Gift Hamper worth Rs. 50,000+ 
-                    Lots more thats still a Surprize</p>
-                <a href="#enrollments" class="btn btn-secondary text-light">Enroll Now</a>
-            </div>
-            <div class="col-md-6 pe-lg-0">
-                <img src="{{ url_for('static', filename='img/register-now.jpeg') }}" alt="India's Iconic Top" class="w-100">
-            </div>
+<div class="container-fluid py-3 ps-lg-5 bg-dark text-light">
+    <div class="row align-items-center">
+        <div class="col-md-6 mb-3">
+            <h1 class="text-uppercase text-golden text-bolder">India's Iconic Top</h1>
+            <h4 class=" mb-lg-4 mb-3 text-golden text-bold">100 Makeup Artists</h4>
+            <p class="lead text-white-50 mb-lg-4 mb-3">For the First time in the History of India- We create a platform to Honor the TOP 100 Iconic Makeup Artists of India. If you think you deserve to be in TOP 100</p>
+            <!-- <p class="lead text-white-50">If you become one of the Top 100 Iconic Makeup Artist, You Get
+                A Trophy and a Certificate which is Valid till 2026
+                Featured in the First Edition of our Magazine to be circulated Nationwide.
+                Interviewed to be seen by atleast 10M viewers with your Story.
+                Featured in Tabloids and Pap Talks on various reputed Platforms such as iDiva, Quint, ZoomTV etc
+                A Gift Hamper worth Rs. 50,000+ 
+                Lots more thats still a Surprize</p> -->
+                <div class="flex mb-5">
+                    <a class="btn btn-golden text-dark p-3 me-2" href="#enrollments">Enroll Now</a>
+                    <a class="btn btn-secondary text-white p-3" href="#about">Know More</a>
+                </div>
+            
+        </div>
+        <div class="col-md-6 pe-lg-0">
+            <img src="{{ url_for('static', filename='img/register-now.jpeg') }}" alt="India's Iconic Top" class="w-100">
         </div>
     </div>
-    <div class="container-fluid p-5 bg-dark text-light" id="enrollments">
-        <div class="row">
-            <div class="col-md-6">
-                <h4>Criteria to Enroll</h4>
-                <ol>
-                    <li>Makeup artist should be a Resident of India.</li>
-                    <li>Should have a Facebook and Instagram Page Compulsorily.</li>
-                    <li>Should have been Practising since last 6 months Atleast.</li>
-                    <li>Should be able to speak in English/ Hindi Compulsorily.</li>
-                    <li>Should be 18 Years and Above of Age.</li>
-                    <li>Should be comfortable in doing makeup for the Model in the Show.</li>
-                </ol>
-                <h4>How to Enroll</h4>
-                <ol>
-                    <li>Fill in the Basic Details.</li>
-                    <li>Pay Registration Charges of Rs. 1000+ Taxes</li>
-                    <li>You will receive a Link within 24 Hours to Share Additional Details such as Social Media Handle, 5 HD Images of Makeup Done so Far etc.</li>
-                    <li>You will receive an Interview Call from our Selection Team.</li>
-                </ol>
-            </div>
-            <div class="col-md-6">
-                <form action="{{ url_for('home') }}" method="post" class="m-lg-3 p-5 text-light bg-secondary text-center rounded needs-validation" novalidate>
-                    <h4 class="mb-3">Fill the Details</h4>
-                    <input type="text" name="name" class="form-control w-100 mb-3" placeholder="Name" autocomplete="off" required>
-                    <input type="tel" name="phone" class="form-control w-100 mb-3" pattern="[789][0-9]{9}" placeholder="Contact No." autocomplete="off" required>
-                    <input type="email" name="email" class="form-control w-100 mb-4" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email" autocomplete="off" required>
-                    <div class="text-lg-end">
-                        <button type="submit" class="btn btn-light text-dark">Submit</button>
-                    </div>
-                </form>
-            </div>
+</div>
+<div class="container-fluid p-5 bg-dark text-light" id="enrollments">
+    <div class="row">
+        <div class="col-md-6">
+            <h4 class="text-golden text-bold mb-lg-4 mb-3">Get In Touch</h4>
+            <p class="lead text-white-50 mb-3">If you become one of the Top 100 Iconic Makeup Artist, You Get
+                A Trophy and a Certificate which is Valid till 2026
+                Featured in the First Edition of our Magazine to be circulated Nationwide.
+                Interviewed to be seen by atleast 10M viewers with your Story.
+                Featured in Tabloids and Pap Talks on various reputed Platforms such as iDiva, Quint, ZoomTV etc
+                A Gift Hamper worth Rs. 50,000+ 
+                Lots more thats still a Surprize</p>
+        </div>
+        <div class="col-md-6">
+            <form action="{{ url_for('home') }}" method="post" class="m-lg-3 p-5 text-light border-5 text-center rounded needs-validation" novalidate>
+                <h4 class="mb-3">Fill the Details</h4>
+                <input type="text" name="name" class="form-control form-control-lg w-100 mb-3" placeholder="Name" autocomplete="off" required>
+                <input type="tel" name="phone" class="form-control form-control-lg w-100 mb-3" pattern="[789][0-9]{9}" placeholder="Contact No." autocomplete="off" required>
+                <input type="email" name="email" class="form-control form-control-lg w-100 mb-4" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email" autocomplete="off" required>
+                <div class="text-lg-end">
+                    <button type="submit" class="btn btn-light text-dark p-3">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
-    <div class="container-fluid p-5 bg-dark text-light" id="about">
-        <div class="row">
-            <div class="col-md-8">
-                <h4>About Us</h4>
-                <p>India's Iconic Top 100 is a Platform built to feature and honour Indian's from various fields who have worked exceptionally well in their area of Work and prove to be a source of Inspiration for Many in the same Industry- It is a platform for you to voice your experience, your hardships, your passion and joy, and your creativity, which is as unique and valuable as YOU are. </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <img src="{{ url_for('static', filename='img/top-100.jpeg') }}" alt="India's Iconic Top" class="w-100">
-            </div>
-            <div class="col-md-6 mb-3">
-                <img src="{{ url_for('static', filename='img/enroll-now.jpeg') }}" alt="India's Iconic Top" class="w-100">
-            </div>
+</div>
+<div class="container-fluid p-5 bg-dark text-light" id="about">
+    <div class="row">
+        <div class="col-md-8">
+            <h4 class="text-golden text-bold mb-lg-4 mb-3">About Us</h4>
+            <p class="lead text-white-50 mb-3 mb-lg-4">India's Iconic Top 100 is a Platform built to feature and honour Indian's from various fields who have worked exceptionally well in their area of Work and prove to be a source of Inspiration for Many in the same Industry- It is a platform for you to voice your experience, your hardships, your passion and joy, and your creativity, which is as unique and valuable as YOU are. </p>
         </div>
     </div>
-    <div class="container-fluid p-5 bg-dark text-light" id="enrollments">
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <h4>Join Us Now</h4>
-                <p>Don't miss this Golden Opportunity to get Featured in India's Top 100 Iconic Makeup Artist. You don't really need count of Followers to SHine- All you need is the Art as an Artist- If you Belive in yourself... We are happy to open the doors for you, to make you Popular and add more Crdibility to your Talent by our Exclusive Certificate.</p>
-            </div>
-            <div class="col-md-6">
-                <form action="{{ url_for('home') }}" method="post" class="m-lg-3 p-5 text-light bg-secondary text-center rounded needs-validation" novalidate>
-                    <h4 class="mb-3">Fill the Details</h4>
-                    <input type="text" name="name" class="form-control w-100 mb-3" placeholder="Name" required>
-                    <input type="tel" name="phone" class="form-control w-100 mb-3" pattern="[789][0-9]{9}" placeholder="Contact No." required>
-                    <input type="email" name="email" class="form-control w-100 mb-4" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email" required>
-                    <div class="text-lg-end">
-                        <button type="submit" class="btn btn-light text-dark">Submit</button>
-                    </div>
-                </form>
-            </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <img src="{{ url_for('static', filename='img/top-100.jpeg') }}" alt="India's Iconic Top" class="w-100">
+        </div>
+        <div class="col-md-6 mb-3">
+            <img src="{{ url_for('static', filename='img/enroll-now.jpeg') }}" alt="India's Iconic Top" class="w-100">
         </div>
     </div>
+</div>
+<div class="container-fluid p-5 bg-dark text-light">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <h4 class="text-golden text-bold mb-lg-4 mb-3">How to enroll</h4>
+            <ol class="lead text-white-50 mb-3 mb-lg-4">
+                <li>Fill in the Basic Details.</li>
+                <li>Pay Registration Charges of Rs. 1000+ Taxes</li>
+                <li>You will receive a Link within 24 Hours to Share Additional Details such as Social Media Handle, 5 HD Images of Makeup Done so Far etc.</li>
+                <li>You will receive an Interview Call from our Selection Team.</li>
+            </ol>
+        </div>
+        <div class="col-md-6 mb-3">
+            <h4 class="text-golden text-bold mb-lg-4 mb-3">Criteria</h4>
+            <ol class="lead text-white-50 mb-3 mb-lg-4">
+                <li>Makeup artist should be a Resident of India.</li>
+                <li>Should have a Facebook and Instagram Page Compulsorily.</li>
+                <li>Should have been Practising since last 6 months Atleast.</li>
+                <li>Should be able to speak in English/ Hindi Compulsorily.</li>
+                <li>Should be 18 Years and Above of Age.</li>
+                <li>Should be comfortable in doing makeup for the Model in the Show.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="container-fluid p-5 bg-dark text-light">
+    <div class="row">
+        <div class="col-md-8 mb-3">
+            <h4 class="text-golden text-bold mb-lg-4 mb-3">Join Us Now</h4>
+            <p class="lead text-white-50 mb-3 mb-lg-4">Don't miss this Golden Opportunity to get Featured in India's Top 100 Iconic Makeup Artist. You don't really need count of Followers to SHine- All you need is the Art as an Artist- If you Belive in yourself... We are happy to open the doors for you, to make you Popular and add more Crdibility to your Talent by our Exclusive Certificate.</p>
+            <a class="btn btn-golden text-dark p-3 me-2" href="#enrollments">Enroll Now</a>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block script %}

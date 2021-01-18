@@ -8,46 +8,46 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <nav class="navbar navbar-expand navbar-dark bg-dark p-3" aria-label="Second navbar example">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{{ url_for('home') }}">
-              <img src="{{ url_for('static', filename='img/logo.jpeg') }}" alt="Logo" class="logo">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    
-          <div class="collapse navbar-collapse" id="navbarsExample02">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item active">
-                <a class="nav-link me-sm-3" href="#about">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link me-lg-3 btn btn-secondary text-light" href="#enrollments">Enroll Now</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
-    {% block main %}{% endblock %}
-    <footer>
-        <ul class="list-inline mb-4">
-            <li class="list-inline-item">
-                <a href="#">Instagram</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#">Facebook</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#">Twitter</a>
-            </li>
+  <nav class="navbar navbar-expand navbar-dark bg-dark px-lg-5 py-lg-3" aria-label="Navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('home') }}">
+        <img src="{{ url_for('static', filename='img/logo.jpeg') }}" alt="Logo" class="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item active">
+            <a class="nav-link me-sm-3" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-lg-3 btn btn-golden text-dark px-3 py-2" href="#enrollments">Enroll Now</a>
+          </li>
         </ul>
-        <p><a href="#">Terms & Conditions</a> <br>
-            <a href="#">Privacy Policy</a></p>
-    </footer>
-    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    {% block script %}{% endblock %}
+      </div>
+    </div>
+  </nav>
+  {% block main %}{% endblock %}
+  <footer>
+      <ul class="list-inline mb-4">
+          <li class="list-inline-item">
+              <a href="#">Instagram</a>
+          </li>
+          <li class="list-inline-item">
+              <a href="#">Facebook</a>
+          </li>
+          <li class="list-inline-item">
+              <a href="#">Twitter</a>
+          </li>
+      </ul>
+      <p><a href="#">Terms & Conditions</a> <br>
+          <a href="#">Privacy Policy</a></p>
+  </footer>
+  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  {% block script %}{% endblock %}
 </body>
 </html>
