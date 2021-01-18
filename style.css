@@ -1,0 +1,15 @@
+a {
+    color: #f8f9fa;
+    text-decoration: none;
+}
+a:hover {
+    color: darkgray;
+}
+.logo {
+    height: 100px;
+}
+footer {
+    padding: 2.5rem 0;
+    text-align: center;
+    background-color:#000000;
+}
