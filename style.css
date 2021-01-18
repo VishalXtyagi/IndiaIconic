@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    font-family: 'Poppins', sans-serif;
+}
 a {
     color: #f8f9fa;
     text-decoration: none;
@@ -6,7 +10,35 @@ a:hover {
     color: darkgray;
 }
 .logo {
-    height: 100px;
+    height: 150px;
+}
+.text-golden {
+    color: #fad64a !important;
+}
+.bg-golden,.btn-golden {
+    background-color: #fad64a !important;
+}
+.bg-dark {
+    background-color: #161616 !important;
+}
+.nav-item .nav-link, .btn-golden {
+    font-weight: 700;
+}
+.text-bolder {
+    font-weight: 700;
+    font-size: 55px;
+}
+.text-bold {
+    font-weight: 400;
+    font-size: 40px;
+}
+form {
+    background-color: #202020;
+    border: 1px solid #fad64a!important;
+}
+.form-control, form .btn {
+    background-color: #c3c3c3;
+    border: none;
 }
 footer {
     padding: 2.5rem 0;
